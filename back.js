@@ -5,12 +5,16 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const productName = form.elements["product-name"].value;
-  const salesForecast = Number(form.elements["sales-forecast"].value);
-  const avgSalePrice = Number(form.elements["average-sale-price"].value);
+  const previousMonthSales = Number(form.elements["previous-month-sales"].value);
   const conversionRate = Number(form.elements["conversion-rate"].value);
+  const marketFactor = Number(form.elements["market-factor"].value);
 
-  const demand = salesForecast * avgSalePrice * conversionRate;
+  const demand = previousMonthSales * conversionRate * marketFactor;
 
   resultsDiv.innerHTML = `
     <h2>Results for ${productName}</h2>
-    <p>The estimated demand for this
+    <p>The estimated demand for next month is <strong>${demand}</strong>.</p>
+  `;
+
+  form.reset();
+});
