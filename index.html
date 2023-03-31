@@ -16,20 +16,11 @@
         <label for="product-name">Product Name:</label>
         <input type="text" id="product-name" name="product-name" required />
 
-        <label for="sales-forecast">Sales Forecast:</label>
+        <label for="previous-month-sales">Previous Month Sales:</label>
         <input
           type="number"
-          id="sales-forecast"
-          name="sales-forecast"
-          min="0"
-          required
-        />
-
-        <label for="average-sale-price">Average Sale Price:</label>
-        <input
-          type="number"
-          id="average-sale-price"
-          name="average-sale-price"
+          id="previous-month-sales"
+          name="previous-month-sales"
           min="0"
           required
         />
@@ -41,6 +32,17 @@
           name="conversion-rate"
           min="0"
           max="1"
+          step=".01"
+          required
+        />
+
+        <label for="market-factor">Market Factor:</label>
+        <input
+          type="number"
+          id="market-factor"
+          name="market-factor"
+          min="0"
+          max="2"
           step=".01"
           required
         />
